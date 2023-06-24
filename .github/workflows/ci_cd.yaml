@@ -27,7 +27,7 @@ jobs:
           python -m pip install -r quote_disp/requirements.txt
           python -m pip install -r quote_gen/requirements.txt
           python -m pip install --upgrade pip
-          pip install flake8 pytest pytest-cov
+          pip install flake8 pytest pytest-cov pytest-mock
       - name: Run quote_disp tests
         run: |
           cd quote_disp
