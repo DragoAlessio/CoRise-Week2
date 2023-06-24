@@ -43,7 +43,7 @@ jobs:
       - name: Write coverage comment
         uses: MishaKav/pytest-coverage-comment@main
         with:
-          pytest-xml-coverage-path: ./quote_disp/coverage.xml
+          pytest-xml-coverage-path: quote_disp/coverage.xml
       - name: Check coverage quote_gen
         run: |
           cd quote_gen
@@ -51,4 +51,4 @@ jobs:
       - name: Write coverage comment
         uses: MishaKav/pytest-coverage-comment@main
         with:
-          pytest-xml-coverage-path: ./quote_gen/coverage.xml
+          pytest-xml-coverage-path: quote_gen/coverage.xml
