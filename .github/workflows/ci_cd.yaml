@@ -36,10 +36,19 @@ jobs:
         run: |
           cd quote_gen
           python -m pytest -v tests
-      - name: Check coverage
+      - name: Check coverage quote_disp
         run: |
+          cd quote_disp
           pytest --cov=calculator --cov-report "xml:coverage.xml"  tests/
       - name: Write coverage comment
         uses: MishaKav/pytest-coverage-comment@main
         with:
-          pytest-xml-coverage-path: ./coverage.xml
+          pytest-xml-coverage-path: ./quote_disp/coverage.xml
+      - name: Check coverage quote_gen
+        run: |
+          cd quote_gen
+          pytest --cov=calculator --cov-report "xml:coverage.xml"  tests/
+      - name: Write coverage comment
+        uses: MishaKav/pytest-coverage-comment@main
+        with:
+          pytest-xml-coverage-path: ./quote_gen/coverage.xml
